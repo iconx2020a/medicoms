@@ -36,5 +36,3 @@ variable folder_id {
   type = string
   default = "299156045263"
 }
-
-
