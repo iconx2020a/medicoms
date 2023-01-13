@@ -9,7 +9,6 @@ resource "google_compute_vpn_tunnel" "tunnel1" {
   vpn_gateway_interface = 0
    depends_on = [google_compute_ha_vpn_gateway.gateway1, google_compute_ha_vpn_gateway.gateway2,google_compute_router.router1, google_compute_router.router2]
 }
-
 resource "google_compute_vpn_tunnel" "tunnel2" {
   name                  = "vpn-tunnel2"
   provider              = google.new-provider
