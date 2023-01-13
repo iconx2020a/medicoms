@@ -1,21 +1,20 @@
-resource "google_compute_firewall" "instance_1_ssh_rule" {
-  name = "instance-1-ssh-rule"
-  network = google_compute_network.network1.name
+resource "google_compute_firewall" "public_vpn_instance_ssh_rule" {
+  name = "public-vpn-instance-ssh-rule"
+  network = google_compute_network.public_vpn_network_1.name
   allow {
     protocol = "tcp"
-    ports = ["22"]
+    ports = var.ports
   }
-  target_tags = ["network1-instance"]
-  source_ranges = ["0.0.0.0/0"]
+  target_tags = ["public-vpn-instance-1"]
+  source_ranges = var.ip_ranges
 }
-
-resource "google_compute_firewall" "instance_2_ssh-rule" {
-  name = "instance-2-ssh-rule"
-  network = google_compute_network.network2.name
+resource "google_compute_firewall" "internal_vpn_instance_icmp" {
+  name = "inetrnal-vpn-instance-icmp"
+  provider = google.new-provider
+  network = google_compute_network.internal_vpn_network_1.name
   allow {
     protocol = "icmp"
   }
-  target_tags = ["network2-instance"]
-  source_ranges = ["0.0.0.0/0"]
+  target_tags = ["internal-vpn--instance-1"]
+  source_ranges = var.ip_ranges
 }
-
