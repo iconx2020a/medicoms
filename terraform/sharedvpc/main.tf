@@ -12,7 +12,6 @@ provider "google" {
   project = var.projects[0]
   region  = var.regions[0]
 }
-
 provider "tls" {
   // no config needed
 }
