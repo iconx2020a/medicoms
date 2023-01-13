@@ -1,5 +1,5 @@
 resource "google_compute_network" "host_network" {
-  name                    = "host-network"
+  name                = "host-network"
   project             =  var.projects[0]
   routing_mode            = "GLOBAL"
   auto_create_subnetworks = false
@@ -16,24 +16,3 @@ resource "google_compute_subnetwork" "host_internal_subnet" {
   region        = var.regions[1]
   network       = google_compute_network.host_network.id
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
