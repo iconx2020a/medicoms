@@ -6,3 +6,6 @@ sudo systemctl start mysqld
 sudo systemctl status mysqld
 sudo cat /var/log/mysqld.log | grep "A temporary password"
 #sudo mysql_secure_installation
+sudo cp /etc/my.cnf /etc/my.cnf.bk
+sudo cp my.cnf /etc/
+sudo systemctl restart mysqld
