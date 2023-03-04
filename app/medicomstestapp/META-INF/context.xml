@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/medicomstestapp">
+
+    <!-- Database resource -->
+    <Resource name="jdbc/main"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="root"
+              password="1234_Root"
+              url="localhost"/>
+</Context>
