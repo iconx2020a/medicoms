@@ -8,7 +8,7 @@ ProxyPass / http://IP of internal instance:8080/
 </VirtualHost>
 EOF
 
-sudo a2enmod proxy && sudo a2enmod proxy_http && a2enmod ssl
+sudo a2enmod proxy && sudo a2enmod proxy_http && sudo a2enmod ssl
 sudo /etc/init.d/apache2 reload 
 sudo systemctl restart appache2
 sudo systemctl enable  apache2
