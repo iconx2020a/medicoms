@@ -7,7 +7,7 @@
               auth="Container"
               type="javax.sql.DataSource"
               driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/testdb"
+              url="jdbc:mysql://resticted-instance-ip:3306/testdb":3306/testdb"
               username="root"
               password="1234_Root"
               />
